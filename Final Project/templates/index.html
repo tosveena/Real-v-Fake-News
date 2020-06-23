@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <link>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Real vs Fake News</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
+<!-- CSS only -->
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</link>
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet"></link>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cover.css') }}"></link>
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">Real vs Fake News</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active" href="#">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">Paste news text below:</h1>
+    <!-- <form action="/action_page.php"> -->
+      <!-- <p class="lead">Paste the text from an article into the box below. Click the "Analyze Text" button to determine if this article is real of fake.</p>
+      <label for="fname">Article Text:</label>
+      <textarea id="article-text" name="article" rows="15" cols="70"></textarea>
+      <br><br> -->
+    <!-- </form> -->
+    <form method="POST" action="/response">
+      Article Text: <textarea type="text" name="article" required input id="textboxid"></textarea>
+      <input type="submit" value="Analyze Text" class="btn btn-lg btn-secondary">
+    </form>
+    <p class="lead">{{result.message}}</p>
+    <!-- <p class="lead">
+      <a onclick="myFunction()" href="#" class="btn btn-lg btn-secondary">Analyze Text
+      </a>
+    </p> -->
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
